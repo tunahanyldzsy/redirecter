@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabzon YBS Yönlendirme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+    <style>
+        :root {
+            --clr-brand-500: #059669;
+            --clr-brand-600: #047857;
+            --clr-brand-100: #d1fae5;
+            --clr-bg: #f1f5f9;
+            --clr-surface: #ffffff;
+            --clr-surface-2: #f8fafc;
+            --clr-border: #e2e8f0;
+            --clr-text-1: #0f172a;
+            --clr-text-2: #334155;
+            --clr-text-3: #64748b;
+            --radius-md: 0.625rem;
+            --radius-lg: 0.875rem;
+            --shadow-md: 0 4px 12px 0 rgb(0 0 0/.10);
+            --shadow-lg: 0 10px 25px -5px rgb(0 0 0/.10);
+            --font-base: 'Inter', system-ui, sans-serif;
+            --dur-fast: 160ms;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --clr-bg: #121212;
+                --clr-surface: #1e1e1e;
+                --clr-surface-2: #2a2a2a;
+                --clr-border: #333333;
+                --clr-text-1: #ffffff;
+                --clr-text-2: #cccccc;
+                --clr-text-3: #999999;
+                --clr-brand-100: rgba(16, 185, 129, 0.15);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html, body {
+            font-family: var(--font-base);
+            background: var(--clr-bg);
+            color: var(--clr-text-2);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .redirect-container {
+            width: 100%;
+            max-width: 440px;
+            padding: 2rem;
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            animation: fadeSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 5rem;
+            height: 5rem;
+            border-radius: var(--radius-lg);
+            background: var(--clr-surface-2);
+            border: 1px solid var(--clr-border);
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-text-1);
+            margin-bottom: 0.5rem;
+        }
+
+        .text-muted {
+            font-size: 0.95rem;
+            color: var(--clr-text-3);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.875rem 1.5rem;
+            background: var(--clr-brand-500);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-base);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background var(--dur-fast), transform var(--dur-fast);
+        }
+
+        .btn-primary:hover {
+            background: var(--clr-brand-600);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .countdown {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--clr-text-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .spinner {
+            width: 1.2rem;
+            height: 1.2rem;
+            border: 2px solid var(--clr-border);
+            border-top-color: var(--clr-brand-500);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="redirect-container">
+        <div class="logo-box">
+            <img src="https://i.ibb.co/PBFvyRt/ybslogox250.png" alt="YBS Logo" width="48" height="48">
+        </div>
+        
+        <h1 class="h1">Trabzon Yönetim Bilgi Sistemi</h1>
+        <p class="text-muted">Ana sisteme güvenli bir şekilde yönlendiriliyorsunuz. Uygulamaya gitmek için aşağıdaki butonu kullanabilirsiniz.</p>
+        
+        <!-- YÖNLENDİRİLECEK URL'Yİ BURAYA GİRİN -->
+        <a href="https://script.google.com/macros/s/AKfycbw47Bld3u8_faqTpWSNiKHagiFJST7sPGUaSC8QIwV_5qkMfLR5kIwCOmet_9FpLuc/exec" class="btn-primary" id="redirect-btn">
+            Web Uygulamasına Devam Et
+            <iconify-icon icon="ri:arrow-right-line" style="font-size: 1.2rem;"></iconify-icon>
+        </a>
+
+        <div class="countdown">
+            <div class="spinner"></div>
+            <span><strong id="timer">5</strong> saniye içinde otomatik yönlendirilecek...</span>
+        </div>
+    </main>
+
+    <script>
+        // Hedef URL'yi buraya tanımla
+        const targetUrl = "https://script.google.com/macros/s/AKfycbw.../exec"; 
+        const redirectBtn = document.getElementById('redirect-btn');
+        const timerElement = document.getElementById('timer');
+        
+        // Buton linkini dinamik ata (href'i ezer)
+        redirectBtn.href = targetUrl;
+
+        let timeLeft = 5;
+
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+
+        // Kullanıcı butona tıklarsa sayacı durdur (isteğe bağlı)
+        redirectBtn.addEventListener('click', () => {
+            clearInterval(countdownInterval);
+        });
+    </script>
+</body>
+</html>
